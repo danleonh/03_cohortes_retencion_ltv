@@ -1,76 +1,65 @@
-📋 Descripción general
+# Proyecto 3 – Análisis de Juegos y Éxito Comercial
 
-Proyecto enfocado en medir la retención de usuarios, analizar cohortes por mes de primera compra/registro y calcular LTV frente a CAC para determinar la rentabilidad y el payback de las inversiones de adquisición. Incluye métricas de producto (DAU/WAU/MAU), análisis de embudo y visualizaciones clave para guiar decisiones.
+## 📋 Descripción general
+El objetivo de este proyecto es identificar los factores clave que influyen en el éxito de los videojuegos, basándose en datos históricos de ventas, calificaciones y reseñas.  
+El análisis busca entender cómo las características del producto (plataforma, género, críticas, región, etc.) impactan en la rentabilidad y popularidad de los títulos.
 
-🎯 Objetivos
+---
 
-Construir cohortes por primera interacción/compra y medir retención.
+## 🎯 Objetivos
+- Analizar las ventas globales y por región de diferentes títulos de videojuegos.  
+- Identificar las plataformas y géneros con mejor desempeño.  
+- Evaluar la relación entre reseñas de usuarios/medios y ventas.  
+- Determinar patrones que expliquen el éxito de los juegos.  
+- Desarrollar recomendaciones para estrategias de lanzamiento futuras.
 
-Calcular LTV (por cohorte y global) y compararlo con CAC.
+---
 
-Medir DAU, WAU, MAU y ratio DAU/MAU (engagement).
+## 🧮 Datos utilizados
+**Dataset principal:** `games.csv`  
+Contiene información sobre videojuegos lanzados hasta 2016, incluyendo:
 
-Identificar palancas de crecimiento y riesgos (churn temprano, payback).
+- `Name` – Nombre del juego  
+- `Platform` – Consola o sistema  
+- `Year_of_Release` – Año de lanzamiento  
+- `Genre` – Género  
+- `Critic_Score`, `User_Score` – Calificaciones  
+- `Global_Sales`, `NA_Sales`, `EU_Sales`, `JP_Sales` – Ventas por región  
 
-Recomendar acciones tácticas para mejorar retención y unit economics.
+---
 
-🧮 Dataset utilizado
+## 🧰 Herramientas y librerías
+- Python  
+- pandas, numpy, scipy  
+- matplotlib, seaborn  
+- Jupyter Notebook  
 
-users.csv → usuarios con user_id, signup_date, fuente de adquisición.
+---
 
-events.csv → eventos por usuario: event_time, event_type (view, add_to_cart, purchase…).
+## 📊 Etapas del análisis
+1. **Limpieza y preparación del dataset**: tratamiento de valores faltantes y conversión de tipos.  
+2. **Análisis exploratorio de datos (EDA)**: estudio descriptivo de ventas y puntuaciones.  
+3. **Comparación de géneros y plataformas**: análisis del ciclo de vida de cada consola.  
+4. **Evaluación de correlaciones** entre calificaciones y ventas.  
+5. **Pruebas de hipótesis** sobre diferencias en ventas por género y plataforma.  
+6. **Conclusiones estratégicas** basadas en los hallazgos.
 
-orders.csv → pedidos: order_id, user_id, order_date, revenue.
+---
 
-costs.csv → gastos de marketing por canal/fecha (channel, cost, date).
+## 🔍 Resultados principales
+- Los géneros **Acción** y **Deportes** concentraron más del **50 % de las ventas globales**.  
+- Las plataformas **PS4 y Xbox One** mostraron mayor crecimiento en los años recientes.  
+- Se detectó **correlación positiva moderada (r ≈ 0.4)** entre la puntuación de críticos y las ventas.  
+- Japón y América del Norte presentaron patrones de consumo muy distintos.  
 
-Tamaño estimado: 50k–150k filas combinadas · Periodo: 6–12 meses
+---
 
-🧰 Tecnologías y herramientas
-Categoría	Herramientas
-Lenguaje	Python
-Librerías	pandas, numpy, matplotlib, seaborn
-Producto	cohort tables, retention curves, LTV/CAC
-Entorno	Jupyter Notebook
-Control de versiones	Git, GitHub
-📈 Visualizaciones clave
+## 💡 Conclusiones
+- El éxito de un juego está influenciado tanto por su género como por la estrategia de lanzamiento.  
+- Las calificaciones de críticos impactan más que las reseñas de usuarios en las ventas iniciales.  
+- Se recomienda priorizar lanzamientos multiplataforma en géneros de alta demanda.  
+- Las campañas deben adaptarse al contexto regional según preferencias locales.  
 
-Curvas de retención por cohorte (M0–M6).
+---
 
-Tabla de cohortes con % de usuarios activos y ARPU por periodo.
-
-DAU / WAU / MAU y DAU/MAU ratio (engagement).
-
-LTV vs CAC por canal/cohorte y tiempo de payback.
-
-Embudo (visitas → add_to_cart → purchase).
-
-🔍 Principales hallazgos (ejemplo típico del análisis)
-
-Retención M1 ~38 %, con caída pronunciada en M2–M3 → foco en onboarding y valor temprano.
-
-LTV promedio ≈ 42 y CAC ≈ 30 → ROI positivo a partir de Mes 3 (payback < 90 días).
-
-Canales orgánicos y referidos muestran mejor DAU/MAU y retención; pago por click requiere optimización de targeting.
-
-Usuarios con 2+ compras en los primeros 30 días tienen 3× LTV versus el resto → oportunidad de activación temprana.
-
-📊 Métricas destacadas
-Indicador	Valor
-Retención M1	~38 %
-LTV promedio	≈ 42
-CAC promedio	≈ 30
-Payback	~3 meses
-DAU/MAU	0.18–0.22
-
-Los valores pueden variar ligeramente según el filtro de outliers y la ventana de cohortes.
-
-💡 Recomendaciones
-
-Onboarding con “aha moment” antes de 24–48h; email/push de activación.
-
-Bundles/upsell en primeras 2 semanas para elevar ARPU y LTV.
-
-Optimizar CAC: priorizar canales con mejor retención (orgánico/referidos).
-
-Probar paywalls/ensayos diferenciados por cohorte/canal.
+## 🗂 Estructura del repositorio
